@@ -930,6 +930,10 @@ h6 {
   font-style: italic;
   color: #152b79;
   margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 24px;
 }
 
 /*--------------------------------------------------------------
@@ -950,7 +954,7 @@ h6 {
 }
 
 #venue .venue-info {
-  background: url("../img/venue-info-bg.jpg") top center no-repeat;
+  background: url("../img/venue-gallery/11.JPG") top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 60px;
@@ -1309,10 +1313,14 @@ h6 {
 
 #buy-tickets .card ul li {
   margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-style: italic;
 }
 
 #buy-tickets .card .text-muted {
-  opacity: 0.7;
+  /* opacity: 0.7; */
+  color: #0e1b4d;
 }
 
 #buy-tickets .card .btn {

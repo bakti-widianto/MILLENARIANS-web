@@ -147,41 +147,25 @@
           <div class="row">
             <div class="col-md-6">
               <img
-                src="assets/img/speakers/1.jpg"
-                alt="Speaker 1"
-                class="img-fluid"
+                id="img-detail"
+                src="assets/img/shimmer.gif"
+                alt="image-detail"
+                class="img-fluid w-100"
+                style="max-height: 400px"
               />
             </div>
 
             <div class="col-md-6">
               <div class="details">
-                <h2>Brenden Legros</h2>
+                <h2 id="title-detail"></h2>
                 <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div> -->
-                <p>
-                  Voluptatem perferendis sed assumenda voluptatibus. Laudantium
-                  molestiae sint. Doloremque odio dolore dolore sit. Quae labore
-                  alias ea omnis ex expedita sapiente molestias atque. Optio
-                  voluptas et.
-                </p>
 
-                <p>
-                  Aboriosam inventore dolorem inventore nam est esse. Aperiam
-                  voluptatem nisi molestias laborum ut. Porro dignissimos eum.
-                  Tempore dolores minus unde est voluptatum incidunt ut aperiam.
-                </p>
-
-                <p>
-                  Et dolore blanditiis officiis non quod id possimus. Optio non
-                  commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum
-                  alias provident omnis incidunt aut. Eius et officia corrupti
-                  omnis error vel quia omnis velit. In qui debitis autem aperiam
-                  voluptates unde sunt et facilis.
-                </p>
+                <p id="desc-detail"></p>
               </div>
             </div>
           </div>
@@ -254,6 +238,29 @@
       class="back-to-top d-flex align-items-center justify-content-center"
       ><i class="bi bi-arrow-up-short"></i
     ></a>
+
+    <script src="assets/data/data.js"></script>
+    <script>
+      const url = new URL(window.location.href);
+
+      // Get the search parameter from the query string
+      const id = url.searchParams.get("id");
+      let html = "";
+
+      myJson.forEach((data) => {
+        if (data.id == id) {
+          console.log(data);
+          document.getElementById("title-detail").innerText = data.name;
+          data.desc.forEach((item) => {
+            html += `<p>${item}</p>`;
+          });
+          document.getElementById("desc-detail").innerHTML = html;
+          document.getElementById(
+            "img-detail"
+          ).src = `assets/img/performa-list/${data.id}.JPG`;
+        }
+      });
+    </script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
